@@ -85,6 +85,7 @@ RUN groupadd -g ${DECONZ_GID} "deconz" && \
 
 # Add deCONZ, install deCONZ, make OTAU dir
 COPY download-deconz.sh /
+COPY deconz_2.25.1_72175c-debian_armhf.deb /
 
 #RUN chmod +x /download-deconz.sh && /download-deconz.sh ${VERSION} ${CHANNEL} ${TARGETPLATFORM}
 
