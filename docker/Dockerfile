@@ -86,9 +86,9 @@ RUN groupadd -g ${DECONZ_GID} "deconz" && \
 # Add deCONZ, install deCONZ, make OTAU dir
 COPY download-deconz.sh /
 
-RUN chmod +x /download-deconz.sh && /download-deconz.sh ${VERSION} ${CHANNEL} ${TARGETPLATFORM}
+#RUN chmod +x /download-deconz.sh && /download-deconz.sh ${VERSION} ${CHANNEL} ${TARGETPLATFORM}
 
-RUN dpkg -i /deconz.deb && \
+RUN dpkg -i /deconz_2.25.1_72175c-debian_armhf.deb && \
     chown root:root /usr/bin/deCONZ* && \
     setcap CAP_NET_BIND_SERVICE=+eip /usr/bin/deCONZ && \
     rm -f /deconz.deb
